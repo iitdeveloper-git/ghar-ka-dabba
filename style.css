@@ -4,26 +4,61 @@
 
 /* 1. CSS Custom Properties & Core Themes */
 :root {
-    --color-orange: #F97316;
-    --color-orange-hover: #E05A10;
-    --color-cream: #FFF7ED;
-    --color-cream-light: #FFFDF9;
+    --color-orange: #D91A1A; /* Crimson Red */
+    --color-orange-hover: #A30F0F; /* Darker Crimson Red */
+    --color-cream: #FDF6ED; /* Warm Rich Cream */
+    --color-cream-light: #F7EBE1; /* Deeper Warm Cream */
     --color-white: #FFFFFF;
     --color-dark: #1F2937;
     --color-dark-light: #374151;
     --color-green: #16A34A;
-    --color-red: #DC2626;
-    --color-brown: #78350F;
+    --color-red: #D91A1A;
+    --color-brown: #5C0606; /* Deep Maroon */
+    --color-gold: #F1B82D; /* Premium Gold */
     
     --font-sans: 'Poppins', sans-serif;
     --font-serif: 'Playfair Display', serif;
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-soft: 0 10px 30px -10px rgba(249, 115, 22, 0.08);
+    --shadow-soft: 0 10px 30px -10px rgba(217, 26, 26, 0.08);
     --shadow-premium: 0 20px 40px -15px rgba(31, 41, 55, 0.06);
     --radius-card: 24px;
     --radius-btn: 30px;
 }
+
+/* Custom Floating & Bobbing Animations for Images */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(0.5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Applying Floating Animations to Images */
+.gallery-img, 
+.hero-tiffin, 
+.hero-rider, 
+.swing-woman,
+.benefits-img,
+.about-img,
+.chef-img,
+.street-food-cart-img,
+.about-cooking-img,
+.features-media-img {
+    animation: floatAnimation 5s ease-in-out infinite;
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+.gallery-card:hover .gallery-img {
+    animation: floatAnimation 2s ease-in-out infinite;
+}
+
 
 /* Reset and Global Styles */
 * {
