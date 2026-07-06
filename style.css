@@ -9,8 +9,8 @@
     --color-cream: #FDF6ED; /* Warm Rich Cream */
     --color-cream-light: #F7EBE1; /* Deeper Warm Cream */
     --color-white: #FFFFFF;
-    --color-dark: #1F2937;
-    --color-dark-light: #374151;
+    --color-dark: #0B0F17; /* Strong bold black for headers/titles */
+    --color-dark-light: #1F2937; /* High-contrast charcoal for body/descriptions */
     --color-green: #16A34A;
     --color-red: #D91A1A;
     --color-brown: #5C0606; /* Deep Maroon */
