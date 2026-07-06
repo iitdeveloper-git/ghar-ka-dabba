@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Gallery | Ghar Ka Dabba Premium Tiffin Service</title>
+    <meta name="description" content="Explore our delicious daily rotating menu gallery. Freshly cooked homemade Indian food including paneer, dal makhani, and home-style rotis.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Custom Gallery Page Styles -->
+    <style>
+        .gallery-hero {
+            padding: 140px 0 60px 0;
+            background-color: var(--color-cream);
+            text-align: center;
+        }
+        .gallery-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--color-dark);
+            margin-bottom: 12px;
+        }
+        .gallery-subtitle {
+            font-size: 1rem;
+            color: var(--color-dark-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .gallery-grid-12 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            padding: 80px 0;
+        }
+        .gallery-card {
+            background-color: var(--color-white);
+            border-radius: var(--radius-card);
+            border: 1px solid rgba(249, 115, 22, 0.05);
+            box-shadow: var(--shadow-premium);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(249, 115, 22, 0.1);
+        }
+        .gallery-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--color-cream);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        .gallery-info {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 12px;
+        }
+        .food-tag {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background-color: rgba(22, 163, 74, 0.1);
+            color: var(--color-green);
+        }
+        .food-tag.sweet {
+            background-color: rgba(249, 115, 22, 0.1);
+            color: var(--color-orange);
+        }
+        .food-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-dark);
+        }
+        .food-desc {
+            font-size: 0.85rem;
+            color: var(--color-dark-light);
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        .gallery-add-btn {
+            background-color: var(--color-orange);
+            color: var(--color-white);
+            border: none;
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+        .gallery-add-btn:hover {
+            background-color: var(--color-orange-hover);
+        }
+        
+        @media (max-width: 1024px) {
+            .gallery-grid-12 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .gallery-grid-12 {
+                grid-template-columns: 1fr;
+            }
+            .gallery-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="images/logo.png" alt="Ghar Ka Dabba Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="hindi-title">घर का डब्बा</span>
+                    <span class="eng-subtitle">GHAR KA DABBA</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links-wrapper" id="navMenu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#menu" class="nav-link">Menu</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="index.html#plans" class="nav-link">Plans</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Cart Icon -->
+                <button class="action-btn" id="galleryCartBtn" aria-label="Shopping Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                </button>
+                <a href="index.html#plans" class="cta-nav-btn">Order Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="gallery-hero">
+            <div class="container">
+                <h1 class="gallery-title">Our Food Gallery</h1>
+                <p class="gallery-subtitle">A glimpse of the pure, fresh, and mouthwatering homemade dishes cooked in our clean home kitchen daily.</p>
+            </div>
+        </section>
+
+        <!-- Grid of 12 Foods -->
+        <section class="gallery-content">
+            <div class="container">
+                <div class="gallery-grid-12">
+                    
+                    <!-- Food 1 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_1.png" alt="Shahi Paneer" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Shahi Paneer</h3>
+                            <p class="food-desc">Fresh cottage cheese cubes simmered in a rich, mild, and creamy tomato and cashew-nut gravy.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 2 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_2.png" alt="Dal Makhani" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Dal Makhani</h3>
+                            <p class="food-desc">Black lentils and red kidney beans slowly cooked overnight with butter, cream, and aromatic spices.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 3 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_3.png" alt="Aloo Gobhi" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Aloo Gobhi</h3>
+                            <p class="food-desc">A classic dry dish of fresh cauliflower florets and baby potato wedges cooked with turmeric and ginger.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 4 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_4.png" alt="Jeera Rice" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Jeera Rice</h3>
+                            <p class="food-desc">Fluffy basmati rice tempered with ghee, roasted cumin seeds, and garnished with fresh green coriander.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 5 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_5.png" alt="Chole Bhature" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Chole Bhature</h3>
+                            <p class="food-desc">Spicy, tangy chickpea curry served with hot, fluffy, and puffed fried flatbreads.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 6 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_6.png" alt="Butter Naan" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Butter Naan</h3>
+                            <p class="food-desc">Soft, pillowy clay-oven baked flatbread brushed generously with fresh melted yellow butter.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 7 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_7.png" alt="Gulab Jamun" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag sweet">Dessert</span>
+                            <h3 class="food-title">Gulab Jamun</h3>
+                            <p class="food-desc">Soft milk-solid balls fried to golden brown and dipped in warm cardamom-infused sugar syrup.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 8 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_8.png" alt="Bhindi Masala" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Bhindi Masala</h3>
+                            <p class="food-desc">Fresh green okra stir-fried with diced onions, tomatoes, and everyday light home spices.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 9 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_9.png" alt="Chicken Curry" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag sweet">Non-Vegetarian</span>
+                            <h3 class="food-title">Chicken Curry</h3>
+                            <p class="food-desc">Tender chicken pieces simmered in a traditional home-style Punjabi onion and ginger-garlic gravy.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 10 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_10.png" alt="Kadhi Chawal" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Kadhi Chawal</h3>
+                            <p class="food-desc">Tangy yogurt-based gram flour curry with pakoras, served with hot steamed basmati rice.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 11 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_11.png" alt="Veg Biryani" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag">Vegetarian</span>
+                            <h3 class="food-title">Veg Biryani</h3>
+                            <p class="food-desc">Layered basmati rice and fresh garden vegetables cooked slow 'Dum' style with saffron and herbs.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Food 12 -->
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/gallery_12.png" alt="Gajar Ka Halwa" class="gallery-img">
+                        </div>
+                        <div class="gallery-info">
+                            <span class="food-tag sweet">Dessert</span>
+                            <h3 class="food-title">Gajar Halwa</h3>
+                            <p class="food-desc">Freshly grated red winter carrots slow-cooked with ghee, milk, cardamoms, and topped with dry nuts.</p>
+                            <button class="gallery-add-btn">Add to Plan</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo-wrapper">
+                    <img src="images/logo.png" alt="Ghar Ka Dabba Logo" class="logo-img">
+                    <div class="logo-text text-white">
+                        <span class="hindi-title">घर का डब्बा</span>
+                        <span class="eng-subtitle text-white-50">GHAR KA DABBA</span>
+                    </div>
+                </a>
+                <p class="brand-pitch">Bringing the purity, health, and unmatched flavor of mother's kitchen straight to you.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Contact</h4>
+                <ul class="footer-list">
+                    <li>+91-730275534</li>
+                    <li>gharkadabba@gmail.com</li>
+                    <li>Delhi, India</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#plans">Plans</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <div class="container copyright-flex">
+                <p>&copy; 2026 <a href="https://iitdeveloper.com/" target="_blank" style="color: var(--color-orange); font-weight: 600;">Ghar Ka Dabba</a>. All Rights Reserved. | Created by <a href="https://iitdeveloper.com/" target="_blank" style="color: var(--color-orange); font-weight: 600;">IIT-Developer</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Simple interactivity script for gallery -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addButtons = document.querySelectorAll(".gallery-add-btn");
+            addButtons.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const title = e.target.closest(".gallery-card").querySelector(".food-title").textContent;
+                    alert(`${title} added to your plan customization! Go to Home > Plans to subscribe.`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
