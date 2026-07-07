@@ -74,10 +74,10 @@ export default function Footer() {
           <h4 className="footer-col-title">Quick Links</h4>
           <ul className="footer-list">
             <li><Link to="/" onClick={(e) => handleNavClick(e, 'home')}>Home</Link></li>
-            <li><a href="#menu" onClick={(e) => handleNavClick(e, 'menu')}>Menu</a></li>
-            <li><Link to="/gallery">Gallery</Link></li>
-            <li><a href="#plans" onClick={(e) => handleNavClick(e, 'plans')}>Plans</a></li>
             <li><a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
+            <li><a href="#menu" onClick={(e) => handleNavClick(e, 'menu')}>Menu</a></li>
+            <li><a href="#plans" onClick={(e) => handleNavClick(e, 'plans')}>Plans</a></li>
+            <li><Link to="/gallery">Gallery</Link></li>
             <li><a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
           </ul>
         </div>

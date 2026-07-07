@@ -69,18 +69,19 @@ export default function Navbar({ onOpenCart, onOpenAuth, cartItem, isLoggedIn, u
             Home
           </Link>
           <a 
+            href="#about" 
+            className="nav-link"
+            onClick={(e) => handleNavClick(e, 'about')}
+          >
+            About Us
+          </a>
+          <a 
             href="#menu" 
             className="nav-link"
             onClick={(e) => handleNavClick(e, 'menu')}
           >
             Menu
           </a>
-          <Link 
-            to="/gallery" 
-            className={`nav-link ${isGalleryPage ? 'active' : ''}`}
-          >
-            Gallery
-          </Link>
           <a 
             href="#plans" 
             className="nav-link"
@@ -88,13 +89,12 @@ export default function Navbar({ onOpenCart, onOpenAuth, cartItem, isLoggedIn, u
           >
             Plans
           </a>
-          <a 
-            href="#about" 
-            className="nav-link"
-            onClick={(e) => handleNavClick(e, 'about')}
+          <Link 
+            to="/gallery" 
+            className={`nav-link ${isGalleryPage ? 'active' : ''}`}
           >
-            About Us
-          </a>
+            Gallery
+          </Link>
           <a 
             href="#contact" 
             className="nav-link"
