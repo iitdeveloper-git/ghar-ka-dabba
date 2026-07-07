@@ -78,7 +78,7 @@ export default function Footer() {
             <li><a href="#menu" onClick={(e) => handleNavClick(e, 'menu')}>Menu</a></li>
             <li><a href="#plans" onClick={(e) => handleNavClick(e, 'plans')}>Plans</a></li>
             <li><Link to="/gallery">Gallery</Link></li>
-            <li><a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
+            <li><a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
           </ul>
         </div>
 

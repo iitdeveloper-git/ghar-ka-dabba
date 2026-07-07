@@ -100,7 +100,7 @@ export default function Navbar({ onOpenCart, onOpenAuth, cartItem, isLoggedIn, u
             className="nav-link"
             onClick={(e) => handleNavClick(e, 'contact')}
           >
-            Contact Us
+            Contact
           </a>
         </nav>
 
