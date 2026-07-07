@@ -1,26 +1,34 @@
 # <p align="center">🍱 घर का डब्बा — Ghar Ka Dabba 🍱</p>
 
 <p align="center">
-  <img src="images/logo.png" alt="Ghar Ka Dabba Logo" width="120" />
+  <img src="frontend/public/images/logo.png" alt="Ghar Ka Dabba Logo" width="130" />
 </p>
 
 <p align="center">
-  <strong>Premium Indian Homemade Tiffin Service Web Application</strong>
+  <strong>🔥 Premium Full-Stack Indian Homemade Tiffin Service Web Application 🔥</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Badge" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 Badge" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge" />
-  <img src="https://img.shields.io/badge/SEO-100%2F100-success?style=for-the-badge" alt="SEO Badge" />
-  <img src="https://img.shields.io/badge/Speed-98%2B-green?style=for-the-badge" alt="Speed Badge" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Badge" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite Badge" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Badge" />
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express Badge" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JS Badge" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/SEO-Optimized-success?style=for-the-badge&logo=google" alt="SEO Badge" />
+  <img src="https://img.shields.io/badge/UI/UX-Premium-orange?style=for-the-badge" alt="UI Badge" />
+  <img src="https://img.shields.io/badge/Speed-Blazing%20Fast-blue?style=for-the-badge" alt="Speed Badge" />
 </p>
 
 <hr />
 
 ## 🌟 Introduction
 
-**Ghar Ka Dabba** is a premium, single-page responsive web application tailored for an elite homemade tiffin service. Designed with **mom-approved health guidelines** and **modern startup UI models** (reminiscent of Zomato, Swiggy, and Apple's minimalist aesthetic), it bridges the gap between pure home kitchens and busy professionals.
+**Ghar Ka Dabba** ek premium aur modern full-stack web application hai jo elite homemade tiffin service provide karta hai. Isko **mom-approved health guidelines** aur modern startup UI models (jaise Zomato, Swiggy, aur Apple ke minimalist theme) se inspire hokar banaya gaya hai. 
+
+Ye application pure homemade food aur busy professionals ke beech ke gap ko bridge karta hai. Ab ye pure **React (Vite)** aur **Node.js (Express)** backend backend system se powered hai.
 
 ---
 
@@ -35,18 +43,18 @@
 
 ---
 
-## 🚀 Key Highlights & UX Features
+## 🚀 Key Highlights & Full-Stack UX Features
 
-*   **📱 Universal Responsiveness**: Smooth adaptations for Mobile, Tablet, Laptop, and Desktop screens.
-*   **🛒 Zomato-Like Tiffin Booking Customizer**:
-    *   **Diet Switcher**: Instantly toggle plans between *Pure Vegetarian* and *Veg + Non-Veg Mix*.
-    *   **Interactive Counter**: Live adjust Roti count (+ or -).
-    *   **Time & Payment slots**: Interactive selectors for delivery timing and payment method.
-    *   **Live Price Calculation**: Total price calculates automatically in real-time.
-*   **📨 Slide-Out Cart Panel**: A beautiful side drawer showing selected subscriptions, subtotal breakdown, free delivery highlights, and booking triggers.
-*   **🔑 Glassmorphic Auth System**: Sleek popup modals for Login and Account Creation.
-*   **🍜 Food Gallery Page**: A dedicated gallery grid with **12 mouthwatering Indian delicacies** complete with custom descriptive tags.
-*   **✨ Parallax & Swing Animations**: Stylized vector artwork (delivery rider, woman on a swing, women cooking) featuring elegant CSS animations.
+*   **⚡ Modern React SPA (Vite)**: Instantly fast transitions bina kisi screen reloads ke.
+*   **📱 Universal Responsiveness**: Mobile, Tablet, Laptop aur Desktops par fully optimized layout.
+*   **🛒 Zomato-Style Subscription Customizer**:
+    *   **Diet Switcher**: Vegetarian aur Non-Vegetarian choices toggle options.
+    *   **Portion Counter**: Live Roti counts adjustment (+ or -) state updates ke sath.
+    *   **Estimated Price Calculator**: Custom features choose karte hi price automatic calculate hota hai.
+*   **📨 Slide-Out Cart Panel**: Right side drawer jo configured plans, subtotal, aur Checkout options dikhata hai.
+*   **🔑 Glassmorphic Auth System**: Login aur Account creation inputs jo backend API ke sath connect hain.
+*   **🍜 Food Gallery Page**: Client-side routing ke sath **16 tasty food items** ki interactive dynamic grid.
+*   **⚙️ Node.js Express API**: Server-side endpoints jo login registers, newsletter subscription aur subscription orders fetch karte hain.
 
 ---
 
@@ -54,40 +62,47 @@
 
 ```
 ghar_ka_dabba/
-├── index.html           # Main landing page structured with semantic HTML5
-├── gallery.html         # Rotating Indian food gallery (12 dishes)
-├── style.css            # Custom theme configurations, keyframes, and media layouts
-├── script.js           # Modal popups, cart states, counter calculators, and scroll states
-├── sitemap.xml          # SEO Sitemap for Google Webmaster indexing
-├── robots.txt           # Crawler instructions
-└── images/              # Premium visual assets and official brand favicon
+├── frontend/                 # React Frontend Application (Vite)
+│   ├── public/               # Favicon aur Static Images
+│   └── src/
+│       ├── components/       # Reusable components (Navbar, Footer, Modals, Cart)
+│       ├── views/            # Route Views (HomeView, GalleryView)
+│       ├── App.jsx           # Application state aur routing configuration
+│       ├── index.css         # Consolidated CSS style sheet
+│       └── main.jsx          # React app DOM mounting point
+├── backend/                  # Node.js Express Server
+│   ├── package.json          # Server configurations aur dependencies
+│   └── server.js             # API routes logic (Auth, Bookings, Subscriptions)
+├── package.json              # Workspace entry package.json
+└── README.md                 # Project handbook
 ```
-
----
-
-## ⚡ Performance & SEO Standard
-
--   **Schema.org Structured Data**: Local business JSON-LD scripts are embedded in headers.
--   **Meta Tag Optimization**: Comprehensive Open Graph (OG) and Twitter Card tags configured.
--   **Speed Optimization**: Static assets load instantly without framework overhead, ensuring Lighthouse scores remain 95+.
 
 ---
 
 ## 🔧 Local Installation Guide
 
-1.  **Clone the project repository**:
-    ```bash
-    git clone https://github.com/iitdeveloper-git/ghar-ka-dabba.git
-    cd ghar-ka-dabba
-    ```
+Niche diye gaye steps ko follow karke fullstack setup ko local system me 2 minute me run kar sakte hain:
 
-2.  **Run a local Python server**:
-    ```bash
-    python -m http.server 8000
-    ```
+### 1. Project directory setup karein:
+```bash
+git clone https://github.com/iitdeveloper-git/ghar-ka-dabba.git
+cd ghar-ka-dabba
+```
 
-3.  **Explore the site**:
-    Open **[http://localhost:8000](http://localhost:8000)** in your browser.
+### 2. Sabhi dependencies ko ek click me install karein:
+```bash
+npm run install-all
+```
+
+### 3. Server aur Frontend concurrently run karein:
+```bash
+npm run dev
+```
+
+### 4. Check karein:
+Dono services start ho jayengi:
+*   **Frontend Client**: [http://localhost:5173](http://localhost:5173)
+*   **Express Backend API**: [http://localhost:5000](http://localhost:5000)
 
 ---
 
@@ -95,7 +110,6 @@ ghar_ka_dabba/
 
 Developed with extreme precision and love by **[IIT-Developer](https://iitdeveloper.com/)**.
 
----
 <p align="center">
   <em>Copyright © 2026 Ghar Ka Dabba. All Rights Reserved.</em>
 </p>
